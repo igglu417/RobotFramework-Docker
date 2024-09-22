@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1 (Python 3.11.10 on linux)" generated="2024-09-22T07:33:21.957463" rpa="false" schemaversion="5">
+<suite id="s1" name="Sample Run" source="/tests/sample_run.robot">
+<kw name="Start Virtual Display" owner="XvfbRobot" type="SETUP">
+<msg time="2024-09-22T07:33:22.088016" level="INFO">Using virtual display: '1280x720x24'</msg>
+<arg>1280</arg>
+<arg>720</arg>
+<doc>Starts virtual display which will be
+ destroyed after test execution will be end</doc>
+<status status="PASS" start="2024-09-22T07:33:22.087804" elapsed="0.101141"/>
+</kw>
+<test id="s1-t1" name="Open Browser in Virtual Display" line="7">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-09-22T07:33:22.189785" level="INFO">Opening browser 'chrome' to base url 'https://www.example.com'.</msg>
+<arg>https://www.example.com</arg>
+<arg>chrome</arg>
+<arg>options=add_argument('--no-sandbox');add_argument('--disable-dev-shm-usage')</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-09-22T07:33:22.189556" elapsed="2.057459"/>
+</kw>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2024-09-22T07:33:24.254418" level="INFO">Page title is 'Example Domain'.</msg>
+<arg>Example Domain</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2024-09-22T07:33:24.247318" elapsed="0.007208"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-09-22T07:33:24.254801" elapsed="0.057546"/>
+</kw>
+<status status="PASS" start="2024-09-22T07:33:22.189139" elapsed="2.123429"/>
+</test>
+<status status="PASS" start="2024-09-22T07:33:21.959350" elapsed="2.353537"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Sample Run">Sample Run</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

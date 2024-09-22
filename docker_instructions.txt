@@ -1,0 +1,16 @@
+# CREATE IMAGE
+docker build -t robot-chrome-test .
+
+# RUN TEST IN CONTAINER
+# CHANGE PATH TO YOUR LOCAL FOLDER
+# REMOVE --rm to keep the container alive
+docker run --rm -v C:/Git/RobotDocker/reports:/tests/reports robot-chrome-test
+
+# RUN IN INTERACTIVE MODE
+docker run -it --entrypoint /bin/bash -v C:/Git/RobotDocker/reports:/tests/reports robot-chrome-test
+
+# USE THIS TO EXEC TEST IN INETRACTIVE MODE INSIDE THE TEST DIR
+robot --outputdir /tests/reports sample_run.robot
+
+# REMOVE IMAGE AND CONTAINER TOGETHER
+docker rm -f robot-chrome-test && docker rmi robot-chrome-test
