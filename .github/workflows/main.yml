@@ -2,7 +2,7 @@ name: Robot Framework Tests
 
 on:
   schedule:
-    - cron: "20 14 * * *"
+    - cron: "20 17 * * *"
   push:
     branches: [ main ]
   pull_request:
@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
 
     - name: Build Docker Image
       run: docker build -t robot-chrome .
@@ -22,7 +22,7 @@ jobs:
       run: docker run --rm -v ${{ github.workspace }}/reports:/tests/reports robot-chrome
 
     - name: Upload Test Reports
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: robot-reports
         path: reports/
